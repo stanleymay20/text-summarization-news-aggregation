@@ -68,7 +68,8 @@ WORDPRESS_PASSWORD=your_wordpress_password_here
 UNSPLASH_ACCESS_KEY=your_unsplash_access_key_here
 ```
 **4. Run the Script**
-```python src/main.py
+```bash
+python src/main.py
 ```
 This will fetch news, generate summaries, and publish them to WordPress.
 
