@@ -10,6 +10,7 @@ This project is an AI-based news summarization system that fetches news articles
 - Automatically posts the summaries to a WordPress blog
 - Runs daily at 08:00 UTC using GitHub Actions
 
+
 ## Technologies Used
 
 - **Python** for data collection, processing, summarization, and automation
@@ -23,7 +24,7 @@ This project is an AI-based news summarization system that fetches news articles
 ## Project Structure
 
 ```plaintext
-text-summarization-news-aggregation/
+88text-summarization-news-aggregation/
 ├── src/
 │   ├── data_collection.py       # Handles fetching news articles from APIs
 │   ├── preprocessing.py         # Preprocesses text (tokenization, stopwords removal)
@@ -44,3 +45,55 @@ text-summarization-news-aggregation/
 ├── requirements.txt             # Python dependencies
 ├── .env                         # Environment variables (DO NOT COMMIT)
 └── .gitignore                   # Ignored files and directories
+
+```
+
+### Setup Instructions
+**1. Clone the Repository**
+```bash
+git clone https://github.com/stanleymay20/text-summarization-news-aggregation.git
+cd text-summarization-news-aggregation
+```
+**2. Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+**3. Set Environment Variables**
+Create a .env file in the root directory and add the following environment variables:
+```ini
+NEWS_API_KEY=your_news_api_key_here
+WORDPRESS_URL=your_wordpress_url_here
+WORDPRESS_USERNAME=your_wordpress_username_here
+WORDPRESS_PASSWORD=your_wordpress_password_here
+UNSPLASH_ACCESS_KEY=your_unsplash_access_key_here
+```
+**4. Run the Script**
+```python src/main.py
+```
+This will fetch news, generate summaries, and publish them to WordPress.
+
+### Automation with GitHub Actions
+This project uses GitHub Actions to run daily at 08:00 UTC. The workflow is defined in .github/workflows/deploy.yml.
+
+### Setting Up GitHub Secrets
+Add the following secrets in your GitHub repository's Settings > Secrets and variables > Actions:
+```
+NEWS_API_KEY
+WORDPRESS_URL
+WORDPRESS_USERNAME
+WORDPRESS_PASSWORD
+UNSPLASH_ACCESS_KEY
+```
+GitHub Actions will use these secrets to automate the summarization process daily.
+
+### Deployment on Vercel
+To deploy this project on Vercel:
+
+1. Connect your GitHub repository to Vercel.
+2. Set the environment variables in Project Settings > Environment Variables.
+3. Vercel will automatically build and deploy the project.
+
+### Diagrams
+![freecompress-Copy of Data Flow Diagram for News Summarizer Application](https://github.com/user-attachments/assets/6ac5777b-718d-4f17-9acd-0c3e7ad736cc)
+![Copy of Data Flow Diagram for News Summarizer Application (1)](https://github.com/user-attachments/assets/664a5ea5-7703-44d7-84c5-e0ee603ee386)
+![Copy of Copy of Architecture Diagram for News Summarizer](https://github.com/user-attachments/assets/7c41a494-4059-49ce-a278-dd7a07cbb518)
