@@ -1,0 +1,7 @@
+requests
+transformers
+nltk
+rouge-score
+python-dotenv
+sentencepiece
+torch
